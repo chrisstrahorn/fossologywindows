@@ -9,4 +9,4 @@ git rm --cached -r .<br>
 git reset --hard<br>
 Check if port 8081 is already being used. If it is, edit Vagrantfile and replace 8081 with a port that is available.<br>
 vagrant up<br>
-http://localhost:8081/repo/
+Access http://localhost:8081/repo/<br>
