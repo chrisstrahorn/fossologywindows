@@ -11,7 +11,15 @@ git rm --cached -r .
 git reset --hard
 ```
 
-Check if port 8081 is already being used. If it is, edit Vagrantfile and replace 8081 with a port that is available.<br>
+Check if port 8081 or 5432 are already being used. 
+
+If they are, edit Vagrantfile in the fossology directory that was created above.
+Search for the following lines
+```
+config.vm.network "forwarded_port", guest: 80, host: 8081
+config.vm.network "forwarded_port", guest: 5432, host: 5432
+```
+and replace 8081 or 542 with a ports that are available.<br>
 Run cmd as Administrator (Find cmd in the Start Menu, it's usually under Accessories, right click, select Run as Administrator)<br>
 ```
 cd fossology
