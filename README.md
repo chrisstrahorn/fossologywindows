@@ -29,3 +29,7 @@ Access [http://localhost:8081/repo/](http://localhost:8081/repo/) Make sure the 
 Login as fossy/fossy<br>
 Create an archive with all your source code using one of the file formats listed by Fossology. It may be necessary to use multiple files if a single file would exceed the maximum size listed by Fossology.<br>
 Select Upload->From File and upload your archive.<br>
+
+## Troubleshooting
+Problem: vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
+Solution: VT-x is a bios setting that allows for virtualization. This error is usually due to VT-x not being enabled in the BIOS. The steps to enable VT-x vary from device to device so Google'ing for the steps is usually the best approach.
