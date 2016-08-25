@@ -31,5 +31,5 @@ Create an archive with all your source code using one of the file formats listed
 Select Upload->From File and upload your archive.<br>
 
 ## Troubleshooting
-Problem: vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
-Solution: VT-x is a bios setting that allows for virtualization. This error is usually due to VT-x not being enabled in the BIOS. The steps to enable VT-x vary from device to device so Google'ing for the steps is usually the best approach.
+**Problem:** vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
+**Solution:** VT-x is a bios setting that allows for virtualization. This error is usually due to VT-x not being enabled in the BIOS. The steps to enable VT-x vary from device to device so Google'ing for the steps is usually the best approach.
