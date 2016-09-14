@@ -12,6 +12,9 @@ git reset --hard
 ```
 
 Check if port 8081 or 5432 are already being used. 
+```
+netstat -an
+```
 
 If they are, edit Vagrantfile in the fossology directory that was created above.
 Search for the following lines
