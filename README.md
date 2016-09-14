@@ -14,15 +14,17 @@ git reset --hard
 Check if port 8081 or 5432 are already being used. 
 ```
 netstat -an
+  TCP    0.0.0.0:8081           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5432           0.0.0.0:0              LISTENING
 ```
 
-If they are, edit Vagrantfile in the fossology directory that was created above.
+If the ports are being used, edit Vagrantfile in the fossology directory that was created above.
 Search for the following lines
 ```
 config.vm.network "forwarded_port", guest: 80, host: 8081
 config.vm.network "forwarded_port", guest: 5432, host: 5432
 ```
-and replace 8081 or 542 with a ports that are available.<br>
+and replace 8081 or 5432 with a ports that are available.<br>
 Run cmd as Administrator (Find cmd in the Start Menu, it's usually under Accessories, right click, select Run as Administrator)<br>
 ```
 cd fossology
