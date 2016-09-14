@@ -13,12 +13,15 @@ git reset --hard
 
 Check if port 8081 or 5432 are already being used. 
 ```
-netstat -an
-  TCP    0.0.0.0:8081           0.0.0.0:0              LISTENING
-  TCP    0.0.0.0:5432           0.0.0.0:0              LISTENING
+netstat -ano
+  TCP    0.0.0.0:8081           0.0.0.0:0              LISTENING    33411
+  TCP    0.0.0.0:5432           0.0.0.0:0              LISTENING    33411
 ```
 
 If the ports are being used, edit Vagrantfile in the fossology directory that was created above.
+
+You can also use the process IDs listed at the end of the netstat output to see if the listening process can be shutdown.
+
 Search for the following lines
 ```
 config.vm.network "forwarded_port", guest: 80, host: 8081
