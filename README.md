@@ -42,3 +42,18 @@ Additional information on using FOSSology can be found in the [http://archive15.
 ## Troubleshooting
 **Problem:** vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
 **Solution:** VT-x is a bios setting that allows for virtualization. This error is usually due to VT-x not being enabled in the BIOS. The steps to enable VT-x vary from device to device so Google'ing for the steps is usually the best approach.
+
+**Problem:**On accessing Fossology using the URL listed above, you receive a message:
+Forbidden
+
+You don't have permission to access /repo/ on this server.
+
+**Solution:**
+cmd was not run as Administrator. Follow the steps above to run cmd as Administrator. 
+
+From the fossology directory, run
+```
+vagrant destroy
+vagrant up
+```
+This should finish without any errors.
