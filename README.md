@@ -35,15 +35,19 @@ net session
 ```
 If the command indicates "Access is denied.", cmd is not running as Administrator and will need to be restarted as per the steps above. See the image below for a failed and a successful test.
 <p>
-![Windows Administrator test](WindowsAdministratorTest.png)
+![Windows Administrator test](WindowsAdministratorTest.png)<p>
+After validating cmd is running as Administrator, you can start Fossology with the following commands (this process may take 10-30 minutes).
 ```
 cd fossology
 vagrant up
 ```
-Access [http://localhost:8081/repo/](http://localhost:8081/repo/) Make sure the port number matches the value configured above<br>
-Login as fossy/fossy<br>
+After those steps are finished running, open a web browser and enter the following URL to access the Fossology web application, making sure to update the port number in the URL so it matches the value configured above:<br>
+[http://localhost:8081/repo/](http://localhost:8081/repo/)<br>
+Login as with the username fossy and the password fossy<br>
 Create an archive with all your source code using one of the file formats listed by Fossology. It may be necessary to use multiple files if a single file would exceed the maximum size listed by Fossology.<br>
 Select Upload->From File and upload your archive.<p>
+The above process will upload your source code to the Fossology virtual machine running locally (your source code will not be sent anywhere else) and begin scanning for references to third party libraries. This process can take quite a while.<br>
+After the scanning process is complete, it is necessary to review all of the findings in the Fossology web apoplication and for each, determine if the tool has identified a piece of third party code, or if it has matched an internal resource.<p>
 Additional information on using FOSSology can be found in the [http://archive15.fossology.org/projects/fossology/wiki/Quickstart](FOSSology Quickstart Guide)
 
 ## Troubleshooting
