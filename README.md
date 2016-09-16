@@ -28,7 +28,14 @@ config.vm.network "forwarded_port", guest: 80, host: 8081
 config.vm.network "forwarded_port", guest: 5432, host: 5432
 ```
 and replace 8081 or 5432 with a ports that are available.<br>
-Run cmd as Administrator (Find cmd in the Start Menu, it's usually under Accessories, right click, select Run as Administrator)<br>
+Run cmd as Administrator (Find cmd in the Start Menu, it's usually under Accessories, right click, select Run as Administrator). If cmd is running as Administrator, you should see "Administrator" in the title of the cmd window as shown in the screenshot below.<p>
+To validate cmd is running as Administrator, run
+```
+net session
+```
+If the command indicates "Access is denied.", cmd is not running as Administrator and will need to be restarted as per the steps above. See the image below for a failed and a successful test.
+<p>
+![Windows Administrator test](WindowsAdministratorTest.png)
 ```
 cd fossology
 vagrant up
