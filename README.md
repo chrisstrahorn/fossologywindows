@@ -11,7 +11,7 @@ git rm --cached -r .
 git reset --hard
 ```
 
-Check if port 8081 or 5432 are already being used. 
+Check if port 8081 or 5432 are already being used. On Windows, you can run netstat from cmd to check.
 ```
 netstat -ano
   TCP    0.0.0.0:8081           0.0.0.0:0              LISTENING    33411
@@ -44,11 +44,14 @@ vagrant up
 After those steps are finished running, open a web browser and enter the following URL to access the Fossology web application, making sure to update the port number in the URL so it matches the value configured above:<br>
 [http://localhost:8081/repo/](http://localhost:8081/repo/)<br>
 Login as with the username fossy and the password fossy<br>
+## Uploading a file to be scanned
 Create an archive with all your source code using one of the file formats listed by Fossology. It may be necessary to use multiple files if a single file would exceed the maximum size listed by Fossology.<br>
 Select Upload->From File and upload your archive.<p>
 The above process will upload your source code to the Fossology virtual machine running locally (your source code will not be sent anywhere else) and begin scanning for references to third party libraries. This process can take quite a while.<br>
+After the file upload completes, select the Jobs tab at the top of the application and select My Recent Jobs.<br>
+Refresh this page until all jobs are complete. This can take a large part of one day depending on the size of your code.<br>
 After the scanning process is complete, it is necessary to review all of the findings in the Fossology web apoplication and for each, determine if the tool has identified a piece of third party code, or if it has matched an internal resource.<p>
-Additional information on using FOSSology can be found in the [http://archive15.fossology.org/projects/fossology/wiki/Quickstart](FOSSology Quickstart Guide)
+Additional information on using FOSSology can be found in the [FOSSology Quickstart Guide](http://archive15.fossology.org/projects/fossology/wiki/Quickstart)
 
 ## Troubleshooting
 **Problem:** vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
