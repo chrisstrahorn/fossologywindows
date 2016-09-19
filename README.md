@@ -36,7 +36,7 @@ net session
 ```
 If the command indicates "Access is denied.", cmd is not running as Administrator and will need to be restarted as per the steps above. See the image below for a failed and a successful test.
 <p>
-![Windows Administrator test](WindowsAdministratorTest.png)<p>
+![Windows Administrator test](images/WindowsAdministratorTest.png)<p>
 After validating cmd is running as Administrator, you can start Fossology with the following commands (this process may take 10-30 minutes).
 ```
 cd fossology
@@ -50,6 +50,8 @@ Create an archive with all your source code using one of the file formats listed
 Select Upload->From File from the top menu.<br>
 Click Choose File and select your source code archive.<br>
 Check all the options in the "Select optional analysis" and "Automatic Concluded License Decider" sections.<br>
+Your screen should now look like the following:
+![Upload a New File](images/UploadNewFile.png)
 Press Upload<p>
 The above process will upload your source code to the Fossology virtual machine running locally (your source code will not be sent anywhere else) and begin scanning for references to third party libraries. This process can take quite a while.<br>
 After the file upload completes, select the Jobs tab at the top of the application and select My Recent Jobs.<br>
