@@ -47,7 +47,10 @@ After those steps are finished running, open a web browser and enter the followi
 Login as with the username fossy and the password fossy<br>
 ## Uploading a file to be scanned
 Create an archive with all your source code using one of the file formats listed by Fossology. It may be necessary to use multiple files if a single file would exceed the maximum size listed by Fossology.<br>
-Select Upload->From File and upload your archive.<p>
+Select Upload->From File from the top menu.<br>
+Click Choose File and select your source code archive.<br>
+Check all the options in the "Select optional analysis" and "Automatic Concluded License Decider" sections.<br>
+Press Upload<p>
 The above process will upload your source code to the Fossology virtual machine running locally (your source code will not be sent anywhere else) and begin scanning for references to third party libraries. This process can take quite a while.<br>
 After the file upload completes, select the Jobs tab at the top of the application and select My Recent Jobs.<br>
 Refresh this page until all jobs are complete. This can take a large part of one day depending on the size of your code.<br>
