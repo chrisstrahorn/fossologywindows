@@ -57,25 +57,25 @@ Press Upload<p>
 The above process will upload your source code to the Fossology virtual machine running locally (your source code will not be sent anywhere else) and begin scanning for references to third party libraries. This process can take quite a while.<br>
 After the file upload completes, select the Jobs tab at the top of the application and select My Recent Jobs.<br>
 Refresh this page until all jobs are complete. This can take a large part of one day depending on the size of your code.<br>
-After the scanning process is complete, it is necessary to review all of the findings in the Fossology web apoplication and for each, determine if the tool has identified a piece of third party code, or if it has matched an internal resource.<p>
 ## License Review
 After the jobs complete, it is necessary to review the results and "clear" any files for which FOSSology could not automatically determine the appropriate license.<br>
 To do this, select Browse from the top menu and select the file that was just scanned.<br>
 You should then see a listing of the files that were scanned together with a "clearing status" as shown in the below screenshot.<p>
-![Scanner Results](images/ScanResultsReview.png)
+![Scanner Results](images/ScanResultsReview.png)<p>
 The goal of the overall License Review step is to clear each and every file. While this process can take some time when there are thousands of files to review, there are fortunately a couple easy ways to accurately clear files in bulk.<p>
+### Clearing results by directory
 To begin with, select any directories that clearly contain third party code, such as the vendor directory shown in the previous screenshot.<br>
 Select this directory and then attempt to determine the license for each third party module. <br>
-For example, selecting the "google/apiclient" directory in the below listing<br>
-![Third party modules listing](images/ThirdPartyModules.png)<br>
-contains a LICENSE file that clearly indicates the "google/apiclient" module is licensed under the Apache 2.0 license.
-![Apache license file](images/LibraryLicenseFile.png)<br>
-With this determined, we can now clear this directory in bulk by clicking on Edit to the right of the module name, selecting the appropriate license from the picker, pressing the &gt; button, and then pressing Add Selected License.
-![Add selected license](images/AddSelectedLicense.png)<br>
-This should clear most of the files under that module (153 out of 156) in this example. To clear the remaining files, select the directory, and review the remaining files that have not been cleared.<br>
-![Remaining file to be cleared](images/ThirdPartyModules.png)<br>
-Click View on the first of these files, then in the Licese table, click on the red X for each license that does not apply, which should leave only the license that was previously determined. Select the Identified radio button, select Go through all files with licenses and no clearing result, and press the &gt; button, which should advance you to the next file to be cleared.<br>
-![Clear a single file](images/ClearSingleFile.png)<br>
+For example, selecting the "google/apiclient" directory in the below listing<p>
+![Third party modules listing](images/ThirdPartyModules.png)<p>
+contains a LICENSE file that clearly indicates the "google/apiclient" module is licensed under the Apache 2.0 license.<p>
+![Apache license file](images/LibraryLicenseFile.png)<p>
+With this determined, we can now clear this directory in bulk by clicking on Edit to the right of the module name, selecting the appropriate license from the picker, pressing the &gt; button, and then pressing Add Selected License.<p>
+![Add selected license](images/AddSelectedLicense.png)<p>
+This should clear most of the files under that module (153 out of 156) in this example. To clear the remaining files, select the directory, and review the remaining files that have not been cleared.<p>
+![Remaining file to be cleared](images/ThirdPartyModules.png)<p>
+Click View on the first of these files, then in the Licese table, click on the red X for each license that does not apply, which should leave only the license that was previously determined. Select the Identified radio button, select Go through all files with licenses and no clearing result, and press the &gt; button, which should advance you to the next file to be cleared.<p>
+![Clear a single file](images/ClearSingleFile.png)<p>
 Continue this process until you are advanced to a file in a different directory. <p>
 Additional information on using FOSSology can be found in the [FOSSology Quickstart Guide](http://archive15.fossology.org/projects/fossology/wiki/Quickstart)
 
