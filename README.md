@@ -46,6 +46,26 @@ vagrant up
 After those steps are finished running, open a web browser and enter the following URL to access the Fossology web application, making sure to update the port number in the URL so it matches the value configured above:<br>
 [http://localhost:8081/repo/](http://localhost:8081/repo/)<br>
 Login as with the username fossy and the password fossy<br>
+
+## Troubleshooting install problems
+**Problem:** vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
+**Solution:** VT-x is a bios setting that allows for virtualization. This error is usually due to VT-x not being enabled in the BIOS. The steps to enable VT-x vary from device to device so Google'ing for the steps is usually the best approach.
+
+**Problem:** On accessing Fossology using the URL listed above, you receive a message:
+Forbidden
+
+You don't have permission to access /repo/ on this server.
+
+**Solution:**
+cmd was not run as Administrator. Follow the steps above to run cmd as Administrator. 
+
+From the fossology directory, run
+```
+vagrant destroy
+vagrant up
+```
+This should finish without any errors.
+
 ## Uploading a file to be scanned
 Create an archive with all your source code using one of the file formats listed by Fossology. It may be necessary to use multiple files if a single file would exceed the maximum size listed by Fossology.<br>
 Select Upload->From File from the top menu.<br>
@@ -70,30 +90,15 @@ For example, selecting the "google/apiclient" directory in the below listing<p>
 ![Third party modules listing](images/ThirdPartyModules.png)<p>
 contains a LICENSE file that clearly indicates the "google/apiclient" module is licensed under the Apache 2.0 license.<p>
 ![Apache license file](images/LibraryLicenseFile.png)<p>
-With this determined, we can now clear this directory in bulk by clicking on Edit to the right of the module name, selecting the appropriate license from the picker, pressing the &gt; button, and then pressing Add Selected License.<p>
+With this determined, we can now clear this directory as a whole. To do so, go back up one level and clicking on Edit to the right of the module name ("google/apiclient" in this example, do not do this for the individual LICENSE file), selecting the appropriate license from the picker, pressing the &gt; button, and then pressing Add selected licenses.<p>
 ![Add selected license](images/AddSelectedLicense.png)<p>
-This should clear most of the files under that module (153 out of 156) in this example. To clear the remaining files, select the directory, and review the remaining files that have not been cleared.<p>
+This should clear most of the files under that module (153 out of 156 in this example).<p>
 ![Remaining file to be cleared](images/ThirdPartyModules.png)<p>
-Click View on the first of these files, then in the Licese table, click on the red X for each license that does not apply, which should leave only the license that was previously determined. Select the Identified radio button, select Go through all files with licenses and no clearing result, and press the &gt; button, which should advance you to the next file to be cleared.<p>
+To clear the remaining files, select the directory (again, "google/apiclient" in this example), and review the remaining files that have not been cleared.<p>
+Click View on the first of these files, then in the License table, click on the red X for each license that does not apply, which should leave only the license that was previously determined. Select the Identified radio button, select Go through all files with licenses and no clearing result, and press the &gt; button, which should advance you to the next file to be cleared.<p>
 ![Clear a single file](images/ClearSingleFile.png)<p>
 Continue this process until you are advanced to a file in a different directory. <p>
+At this point, you have successfully cleared all the files in a directory. By repeating this process for large directories, it is possible to clear a large number of files in fairly short order.<p>
+## Additional information on FOSSology
 Additional information on using FOSSology can be found in the [FOSSology Quickstart Guide](http://archive15.fossology.org/projects/fossology/wiki/Quickstart)
 
-## Troubleshooting
-**Problem:** vagrant up fails due to the virtual machine not starting with an error related to VT-x.<br>
-**Solution:** VT-x is a bios setting that allows for virtualization. This error is usually due to VT-x not being enabled in the BIOS. The steps to enable VT-x vary from device to device so Google'ing for the steps is usually the best approach.
-
-**Problem:** On accessing Fossology using the URL listed above, you receive a message:
-Forbidden
-
-You don't have permission to access /repo/ on this server.
-
-**Solution:**
-cmd was not run as Administrator. Follow the steps above to run cmd as Administrator. 
-
-From the fossology directory, run
-```
-vagrant destroy
-vagrant up
-```
-This should finish without any errors.
